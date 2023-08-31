@@ -28,7 +28,7 @@ button:hover {
 #carrinho {
     position: fixed;
     display: flex;
-    z-index: 1;
+    z-index: 11;
     right:-300px;
     top:0;
     transition-duration: .5s;
@@ -48,17 +48,77 @@ button:hover {
     box-shadow: 0px -5px 7px rgba(0, 0, 0, 0.76);
 }
 
-article {
-    width:290px;
-    margin: auto;
-    text-align: center;
+#produtos-carrinho {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
-article > img {
-    width: 70%;
+.card-carrinho {
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    width:280px;
+    margin: 10px auto;
+    border-radius: 15px 9px  9px;
+}
+
+.card-carrinho > img {
+    width: 20%;
+    border-radius: 15px 0px;
+    box-shadow: 2px -3px 6px rgba(0, 0, 0, 0.39);
+}
+
+.card-carrinho  p {
+    text-align: left;
+    color: black;
+    font-weight: lighter;
+    font-size: smaller;
+    padding: 2px 0px;
+    margin: 0px 7px;
+}
+
+#info-cart {
+    width: 100%;
+    padding-top: 5px;
+}
+
+#info-cart > #name-cart{
+    color: black;
+}
+
+#info-cart > #size-cart{
+    color: gray;
+    font-size: x-small;
+}
+
+#info-cart > #price-cart{
+    color: rgb(2, 184, 2);
+}
+
+#rem-cart {
+    display: flex;
+    margin: 2px;
+    width: 23px;
+    padding:0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 7px 7px 0px;
+}
+
+#rem-cart i {
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#rem-cart:hover {
+    background-color: rgba(255, 0, 0, 0.363);
 }
 
 #confirm {
+    z-index: 12;
     margin: 10px;
     padding: 5px;
     background-color: black;
@@ -72,6 +132,7 @@ article > img {
 
 header {
     position: sticky;
+    z-index: 10;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -99,15 +160,34 @@ main  p {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
     width: 200px;
     background-color: white;
     border: solid 2px gray;
     border-radius: 10px;
     margin: 10px;
+    justify-content: space-between;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.301);
 }
 
 .card img {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.534);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
+}
+
+.card > .adicionar {
+    display: flex;
+    margin: 2px;
+    height: 17px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 7px 7px;
+    box-shadow: none;
+}
+
+.card:hover {
+    scale: 106%;
+    transition-duration: .2s;
 }
