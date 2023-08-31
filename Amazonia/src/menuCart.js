@@ -1,11 +1,11 @@
 function openCart (){
     const overlay = document.querySelector('#carrinho');
-    overlay.style.display= 'block';
+    overlay.style.right= 0;
 }
 
 function closeCart (){
     const overlay = document.querySelector('#carrinho');
-    overlay.style.display= 'none';
+    overlay.style.right= "-300px";
 }
 
 export function initializeCart (){

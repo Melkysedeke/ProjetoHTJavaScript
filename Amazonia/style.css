@@ -26,11 +26,12 @@ button:hover {
 }
 
 #carrinho {
-    display: none;
+    /* display: none; */
     position: fixed;
     z-index: 1;
     right:0;
     top:0;
+    transition-duration: .5s;
     width: 300px;
     height: 100%;
     background-image: linear-gradient(to right, rgba(128, 128, 128, 0.767) 3%, gray 97%)
