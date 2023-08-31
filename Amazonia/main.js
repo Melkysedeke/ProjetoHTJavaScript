@@ -1,3 +1,5 @@
+import { initializeCart } from "./src/menuCart.js";
+
 const catalogo = [
     {
       id: 1,
@@ -66,7 +68,7 @@ const catalogo = [
   ];
   
   for (const produtoCatalogo of catalogo) {
-    const cartaoProduto = `<div id="card-produto-1">
+    const cartaoProduto = `<div class="card" id="card-produto-${catalogo.id}">
   <img
     src="./assets/img/${produtoCatalogo.imagem}"
     alt="Produto 1 do Magazine Hashtag."
@@ -80,3 +82,5 @@ const catalogo = [
   
     document.getElementById("container-produto").innerHTML += cartaoProduto;
   }
+
+  initializeCart();
