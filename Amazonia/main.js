@@ -65,6 +65,7 @@ const catalogo = [
       imagem: "product-8.jpg",
       feminino: true,
     },
+    
   ];
   
   for (const produtoCatalogo of catalogo) {
