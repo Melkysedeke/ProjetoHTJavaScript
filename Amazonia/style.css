@@ -26,15 +26,17 @@ button:hover {
 }
 
 #carrinho {
-    /* display: none; */
     position: fixed;
+    display: flex;
     z-index: 1;
-    right:0;
+    right:-300px;
     top:0;
     transition-duration: .5s;
     width: 300px;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.767) 3%, gray 97%)
+    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.767) 3%, gray 97%);
+    flex-flow:  column;
+    justify-content: space-between;
 }
 
 #cabecalho-carrinho {
@@ -44,6 +46,28 @@ button:hover {
     height: 60px;
     padding: 10px 10px 10px 80px;
     box-shadow: 0px -5px 7px rgba(0, 0, 0, 0.76);
+}
+
+article {
+    width:290px;
+    margin: auto;
+    text-align: center;
+}
+
+article > img {
+    width: 70%;
+}
+
+#confirm {
+    margin: 10px;
+    padding: 5px;
+    background-color: black;
+}
+
+#confirm:hover {
+    background-color: grey;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px black inset;
 }
 
 header {
