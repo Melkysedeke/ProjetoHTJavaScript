@@ -56,6 +56,10 @@ button:hover {
     overflow-y: auto;
 }
 
+#produtos-carrinho::-webkit-scrollbar {
+    width: 0;
+}
+
 .card-carrinho {
     position: relative;
     background-color: white;
@@ -73,7 +77,15 @@ button:hover {
     box-shadow: 2px 0px 6px rgba(0, 0, 0, 0.39);
 }
 
-.card-carrinho  p {
+#info-cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    justify-content: space-between;
+}
+
+#info-cart > p {
     text-align: left;
     color: black;
     font-weight: lighter;
@@ -82,26 +94,21 @@ button:hover {
     margin: 0px 7px;
 }
 
-#info-cart {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 5px;
-    justify-content: space-between;
-}
-
 #info-cart > #name-cart{
     color: black;
     font-size: small;
+    font-weight: bold;
 }
 
 #info-cart > #size-cart{
     color: gray;
     font-size: x-small;
+    font-weight: bold;
 }
 
 #info-cart > #price-cart{
     color: rgb(2, 184, 2);
+    font-weight: bold;
 }
 
 .rem-cart {
@@ -151,6 +158,12 @@ button:hover {
     font-size: 2px;
     margin: 0px;
     padding: 0px;
+}
+
+.countId {
+    font-weight: bold;
+    color: black;
+    margin: 0px 2px;
 }
 
 #confirm {

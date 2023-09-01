@@ -58,7 +58,7 @@ function desenharProdutoCarrinho (idProduto){
     </div>
     <div id="count">
       <button class="countButton" id="incrementarProduto-${produto.id}">+</button>
-      <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
+      <p class="countId" id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
       <button class="countButton" id="decrementarProduto-${produto.id}">-</button>
     </div>
     <button class="rem-cart" id="rem-cart-${produto.id}"><i class="fa-solid fa-xmark"></i></i></button>`;
