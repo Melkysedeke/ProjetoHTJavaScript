@@ -27,7 +27,7 @@ function removerDoCarrinho (idProduto){
 
 function incrementarQuantidadeProduto (idProduto){
   idsProdutoCarrinhoComQuantidade[idProduto]++;
-  atualizarInformaçãoQuantidade (idProduto);
+  atualizarInformaçãoQuantidade(idProduto);
 }
 
 function decrementarQuantidadeProduto (idProduto){
@@ -36,7 +36,7 @@ function decrementarQuantidadeProduto (idProduto){
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
-  atualizarInformaçãoQuantidade (idProduto);
+  atualizarInformaçãoQuantidade(idProduto);
 }
 
 function atualizarInformaçãoQuantidade (idProduto){
@@ -44,36 +44,34 @@ function atualizarInformaçãoQuantidade (idProduto){
 }
 
 function desenharProdutoCarrinho (idProduto){
-  const produto = catalogo.find((p) => p.id ===idProduto)
+  const produto = catalogo.find((p) => p.id === idProduto)
 
-  const containerProdutoCarrinho =document.getElementById('produtos-carrinho');
+    const containerProdutoCarrinho = document.getElementById('produtos-carrinho');
+    const elementoArticle = document.createElement("article");
+    elementoArticle.classList.add('card-carrinho');
+    const cartaoProdutoCarrinho = `
+    <img src="assets/img/${produto.imagem}" alt="${produto.nome}"/>
+    <div id="info-cart">
+      <p id="name-cart">${produto.nome}</p>
+      <p id="size-cart">Tamanho M</p>
+      <p id="price-cart">$${produto.preco}</p>
+    </div>
+    <div id="count">
+      <button class="countButton" id="incrementarProduto-${produto.id}">+</button>
+      <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
+      <button class="countButton" id="decrementarProduto-${produto.id}">-</button>
+    </div>
+    <button class="rem-cart" id="rem-cart-${produto.id}"><i class="fa-solid fa-xmark"></i></i></button>`;
 
-  const elementoArticle = document.createElement("article");
+    elementoArticle.innerHTML = cartaoProdutoCarrinho;
 
-  elementoArticle.classList.add('card-carrinho')
+    containerProdutoCarrinho.appendChild(elementoArticle);
 
-  const cartaoProdutoCarrinho = `<img src="assets/img/${produto.imagem}" alt="${produto.nome}">
-  <div id="info-cart">
-    <p id="name-cart">${produto.nome}</p>
-    <p id="size-cart">Tamanho M</p>
-    <p id="price-cart">$${produto.preco}</p>
-  </div>
-  <div id="count">
-    <button class="countButton" id="incrementarProduto-${produto.id}">+</button>
-    <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
-    <button class="countButton" id="decrementarProduto-${produto.id}">-</button>
-  </div>
-  <button class="rem-cart" id="rem-cart-${produto.id}"><i class="fa-solid fa-xmark"></i></i></button>`;
+    document.getElementById(`incrementarProduto-${produto.id}`).addEventListener('click', () => incrementarQuantidadeProduto(produto.id));
 
-  elementoArticle.innerHTML = cartaoProdutoCarrinho;
+    document.getElementById(`decrementarProduto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
 
-  containerProdutoCarrinho.appendChild(elementoArticle);
-
-  document.getElementById(`incrementarProduto-${produto.id}`).addEventListener('click', () => incrementarQuantidadeProduto(produto.id));
-
-  document.getElementById(`decrementarProduto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
-
-  document.getElementById(`rem-cart-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
+    document.getElementById(`rem-cart-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
 }
 
 function renderizarProdutoCarrinho (){
