@@ -104,7 +104,7 @@ button:hover {
     color: rgb(2, 184, 2);
 }
 
-#rem-cart {
+.rem-cart {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,7 +118,7 @@ button:hover {
     /* border-radius: 0px;         */
 }
 
-#rem-cart i {
+.rem-cart i {
     font-size: 10px;
     margin: 0px;
     padding: 0px;
