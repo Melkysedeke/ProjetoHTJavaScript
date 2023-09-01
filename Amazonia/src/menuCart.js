@@ -46,34 +46,34 @@ function atualizarInformaçãoQuantidade (idProduto){
 function desenharProdutoCarrinho (idProduto){
   const produto = catalogo.find((p) => p.id ===idProduto)
 
-    const containerProdutoCarrinho =document.getElementById('produtos-carrinho');
+  const containerProdutoCarrinho =document.getElementById('produtos-carrinho');
 
-    const elementoArticle = document.createElement("article");
+  const elementoArticle = document.createElement("article");
 
-    elementoArticle.classList.add('card-carrinho')
+  elementoArticle.classList.add('card-carrinho')
 
-    const cartaoProdutoCarrinho = `<img src="assets/img/${produto.imagem}" alt="${produto.nome}">
-    <div id="info-cart">
-      <p id="name-cart">${produto.nome}</p>
-      <p id="size-cart">Tamanho M</p>
-      <p id="price-cart">$${produto.preco}</p>
-    </div>
-    <div id="count">
-      <button class="countButton" id="incrementarProduto-${produto.id}">+</button>
-      <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
-      <button class="countButton" id="decrementarProduto-${produto.id}">-</button>
-    </div>
-    <button class="rem-cart" id="rem-cart-${produto.id}"><i class="fa-solid fa-xmark"></i></i></button>`;
+  const cartaoProdutoCarrinho = `<img src="assets/img/${produto.imagem}" alt="${produto.nome}">
+  <div id="info-cart">
+    <p id="name-cart">${produto.nome}</p>
+    <p id="size-cart">Tamanho M</p>
+    <p id="price-cart">$${produto.preco}</p>
+  </div>
+  <div id="count">
+    <button class="countButton" id="incrementarProduto-${produto.id}">+</button>
+    <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
+    <button class="countButton" id="decrementarProduto-${produto.id}">-</button>
+  </div>
+  <button class="rem-cart" id="rem-cart-${produto.id}"><i class="fa-solid fa-xmark"></i></i></button>`;
 
-    elementoArticle.innerHTML = cartaoProdutoCarrinho;
+  elementoArticle.innerHTML = cartaoProdutoCarrinho;
 
-    containerProdutoCarrinho.appendChild(elementoArticle);
+  containerProdutoCarrinho.appendChild(elementoArticle);
 
-    document.getElementById(`incrementarProduto-${produto.id}`).addEventListener('click', () => incrementarQuantidadeProduto(produto.id));
+  document.getElementById(`incrementarProduto-${produto.id}`).addEventListener('click', () => incrementarQuantidadeProduto(produto.id));
 
-    document.getElementById(`decrementarProduto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
+  document.getElementById(`decrementarProduto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
 
-    document.getElementById(`rem-cart-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
+  document.getElementById(`rem-cart-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
 }
 
 function renderizarProdutoCarrinho (){
