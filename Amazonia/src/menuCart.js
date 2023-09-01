@@ -1,15 +1,6 @@
 import { catalogo } from "./utilidades.js";
 
-const idsProdutoCarrinhoComQuantidade = {
-  '1': 0,
-  '2': 0,
-  '3': 0,
-  '4': 0,
-  '5': 0,
-  '6': 0,
-  '7': 0,
-  '8': 0,
-}
+const idsProdutoCarrinhoComQuantidade = {};
 
 function openCart (){
     const overlay = document.querySelector('#carrinho');
@@ -30,6 +21,7 @@ export function initializeCart (){
 }
 
 export function addInCart (idProduto){
+    idsProdutoCarrinhoComQuantidade (idProduto) = 1;
     const produto = catalogo.find((p) => p.id ===idProduto)
     const containerProdutoCarrinho =document.getElementById('produtos-carrinho');
     const cartaoProdutoCarrinho = `<article class="card-carrinho">
@@ -41,7 +33,7 @@ export function addInCart (idProduto){
    </div>
    <div id="count">
     <button class="countButton">+</button>
-    <p id="qntProduto">${produto.id}</p>
+    <p id="quantidade-${produto.id}">${idsProdutoCarrinhoComQuantidade[produto.id]}</p>
     <button class="countButton">-</button>
    </div>
    <button id="rem-cart"><i class="fa-solid fa-xmark"></i></i></button>
