@@ -22,7 +22,6 @@ button {
 button:hover {
     background-color: rgb(179, 179, 179);
     cursor: pointer;
-    box-shadow: 0px 0px 3px black inset;
 }
 
 #carrinho {
@@ -107,7 +106,7 @@ button:hover {
 }
 
 #info-cart > #price-cart{
-    color: rgb(2, 184, 2);
+    color: rgb(0, 190, 0);
     font-weight: bold;
 }
 
@@ -122,7 +121,6 @@ button:hover {
     width: 20px;
     height: 15px;
     padding:0px;
-    /* border-radius: 0px;         */
 }
 
 .rem-cart i {
@@ -152,9 +150,12 @@ button:hover {
     margin: 2px;
     padding: 0px;
     border-radius: 0px;
+    background-color: white;
+    color: black;
 }
 
 .countButton > i {
+    color: black;
     font-size: 2px;
     margin: 0px;
     padding: 0px;
@@ -213,22 +214,24 @@ main  p {
     flex-direction: column;
     width: 200px;
     background-color: white;
-    border: solid 2px gray;
     border-radius: 10px;
     margin: 10px;
     justify-content: space-between;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.301);
+    box-shadow: 0px 8px 7px rgba(0, 0, 0, 0.466);
 }
 
 .card img {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
+}
+
+.card > p {
+    margin-left: 10px;
 }
 
 .card > .adicionar {
     display: flex;
-    margin: 2px;
+    margin: 6px;
     height: 17px;
     justify-content: center;
     align-items: center;
@@ -239,4 +242,18 @@ main  p {
 .card:hover {
     scale: 106%;
     transition-duration: .2s;
+}
+
+#inv-preco {
+    display: flex;
+    padding-left: 14px;
+}
+
+#inv-preco > p {
+    font-weight: bolder;
+}
+
+#preco-total {
+    margin: auto;
+    padding-right: 19%;
 }

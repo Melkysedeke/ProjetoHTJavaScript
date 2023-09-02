@@ -1,6 +1,6 @@
-import { catalogo } from "./utilidades.js";
+import { catalogo, salvarLocalStorage, lerLocalStorage } from "./utilidades.js";
 
-const idsProdutoCarrinhoComQuantidade = {};
+const idsProdutoCarrinhoComQuantidade = lerLocalStorage('carrinho') ?? {};
 
 function openCart (){
     const overlay = document.querySelector('#carrinho');
@@ -22,11 +22,15 @@ export function initializeCart (){
 
 function removerDoCarrinho (idProduto){
   delete idsProdutoCarrinhoComQuantidade[idProduto];
+  salvarLocalStorage('carrinho',idsProdutoCarrinhoComQuantidade);
+  atualizarPreçoCarrinho();
   renderizarProdutoCarrinho();
 }
 
 function incrementarQuantidadeProduto (idProduto){
   idsProdutoCarrinhoComQuantidade[idProduto]++;
+  salvarLocalStorage('carrinho',idsProdutoCarrinhoComQuantidade);
+  atualizarPreçoCarrinho();
   atualizarInformaçãoQuantidade(idProduto);
 }
 
@@ -36,6 +40,8 @@ function decrementarQuantidadeProduto (idProduto){
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto]--;
+  salvarLocalStorage('carrinho',idsProdutoCarrinhoComQuantidade);
+  atualizarPreçoCarrinho();
   atualizarInformaçãoQuantidade(idProduto);
 }
 
@@ -74,7 +80,7 @@ function desenharProdutoCarrinho (idProduto){
     document.getElementById(`rem-cart-${produto.id}`).addEventListener('click', () => removerDoCarrinho(produto.id));
 }
 
-function renderizarProdutoCarrinho (){
+export function renderizarProdutoCarrinho (){
   const containerProdutoCarrinho = document.getElementById("produtos-carrinho");
   containerProdutoCarrinho.innerHTML = '';
   for (const idProduto in idsProdutoCarrinhoComQuantidade){
@@ -88,5 +94,15 @@ export function addInCart (idProduto){
       return;
     }
     idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+    salvarLocalStorage('carrinho',idsProdutoCarrinhoComQuantidade);
     desenharProdutoCarrinho(idProduto);
+}
+
+export function atualizarPreçoCarrinho(){
+  const precoCarrinho = document.getElementById('preco-total');
+  let precoTotalCarrinho = 0;
+  for (const idProdutoNoCarrinho in idsProdutoCarrinhoComQuantidade){
+    precoTotalCarrinho += catalogo.find(p=>p.id === idProdutoNoCarrinho).preco * idsProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+  }
+  precoCarrinho.innerText = `$${precoTotalCarrinho}`
 }

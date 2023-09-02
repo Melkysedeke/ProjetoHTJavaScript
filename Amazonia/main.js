@@ -1,6 +1,7 @@
 import { renderizarCatalogo } from "./src/cartãoProduto.js";
-import { initializeCart } from "./src/menuCart.js";
+import { initializeCart, renderizarProdutoCarrinho, atualizarPreçoCarrinho } from "./src/menuCart.js";
   
   renderizarCatalogo();
   initializeCart();
-  
+  atualizarPreçoCarrinho();
+  renderizarProdutoCarrinho();
