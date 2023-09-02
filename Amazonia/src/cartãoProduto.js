@@ -3,7 +3,7 @@ import { addInCart } from "./menuCart.js";
 
 export function renderizarCatalogo (){
     for (const produtoCatalogo of catalogo) {
-        const cartaoProduto = `<div class="card" id="card-produto-${produtoCatalogo.id}">
+        const cartaoProduto = `<div class="card ${produtoCatalogo.feminino ? 'feminino' : 'masculino'}" id="card-produto-${produtoCatalogo.id}">
         <img src="./assets/img/${produtoCatalogo.imagem}" alt="Produto 1 do Magazine Hashtag."/>
         <p>${produtoCatalogo.nome}</p>
         <p class="info-cart">${produtoCatalogo.marca}</p>
