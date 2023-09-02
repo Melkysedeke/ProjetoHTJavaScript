@@ -94,6 +94,7 @@ export function addInCart (idProduto){
       return;
     }
     idsProdutoCarrinhoComQuantidade[idProduto] = 1;
+    atualizarPreçoCarrinho();
     salvarLocalStorage('carrinho',idsProdutoCarrinhoComQuantidade);
     desenharProdutoCarrinho(idProduto);
 }
