@@ -34,7 +34,7 @@ button:hover {
     width: 300px;
     height: 100%;
     background-image: linear-gradient(to right, rgba(128, 128, 128, 0.767) 3%, gray 97%);
-    flex-flow:  column;
+    flex-flow: column;
     justify-content: space-between;
 }
 
@@ -193,11 +193,16 @@ header {
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.178);
 }
 
-header > img {
+header a {
+    height: 100%;
+}
+
+a > img {
     height: 100%;
 }
 
 main {
+    background-color: ghostwhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -221,7 +226,7 @@ input[type="radio"] {
     display: none;
 }
 
-filtro{
+ .filtro{
     padding: 7px;
     display: inline-block;
     cursor: pointer;
@@ -230,7 +235,7 @@ filtro{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.254);
 }
 
-filtro:hover {
+.filtro:hover {
     background-color: #e0e0e0; 
     padding: 7px;
     display: inline-block;
@@ -302,8 +307,4 @@ input:checked + label {
 
 .hidden {
     display: none;
-}
-
-input::placeholder {
-    color: #888888a1; /* Substitua #888 pela cor desejada */
 }

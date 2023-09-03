@@ -72,3 +72,30 @@ export const catalogo = [
   export function lerLocalStorage (chave){
     return JSON.parse(localStorage.getItem(chave));
   }
+
+  export function apagarDoLocalStorage (chave){
+    localStorage.removeItem(chave);
+  }
+
+  export function desenharProdutoCarrinhoSimples (idProduto, idContainerHtml, quantidadeProduto){
+    const produto = catalogo.find((p) => p.id === idProduto)
+  
+      const containerProdutoCarrinho = document.getElementById(idContainerHtml);
+      const elementoArticle = document.createElement("article");
+      elementoArticle.classList.add('card-carrinho');
+      const cartaoProdutoCarrinho = `
+      <img src="assets/img/${produto.imagem}" alt="${produto.nome}"/>
+      <div id="info-cart">
+        <p id="name-cart">${produto.nome}</p>
+        <p id="size-cart">Tamanho M</p>
+        <p id="price-cart">$${produto.preco}</p>
+      </div>
+      <div id="count">
+        <p class="countId" id="quantidade-${produto.id}">${quantidadeProduto}</p>
+      </div>`;
+  
+      elementoArticle.innerHTML = cartaoProdutoCarrinho;
+  
+      containerProdutoCarrinho.appendChild(elementoArticle);
+  }
+  

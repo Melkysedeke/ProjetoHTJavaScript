@@ -4,43 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CheckOut</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleCo.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="height: 85vh; width: 100%; margin: 0px; padding: 0px;">
+<body>
   <header>
-    <img src="assets/logo/hashtag.svg" alt="Logo" style="scale: 80%;">
+    <a href="/Amazonia/"><img src="assets/logo/hashtag.svg" alt="Logo" style="scale: 80%;"></a>
   </header>
-  <form style="display: flex; width: 100%; height: 100%; padding: 5px; gap: 4px;">
-    <section id="dados-usuario" style="width: 33.3%; background-color: lightgray; margin: 50px 0px 0px 20px; padding: 20px; border-radius: 5px;">
-        <p style="color: black; margin: 10px; text-align: center; font-weight: bold;">Seus dados</p>
-        <div style="display: flex; flex-direction: column; padding: 20px 20px 5px 20px
-        ;">
-            <label style="margin-bottom: 5px;" for="nome">Nome</label>
-            <input style="border-radius: 5px; font-size: smaller;  padding: 3px 3px 3px 6px;" type="text" id="nome" placeholder="Nome Completo" required>
+  <main>
+    <form>
+      <section class="secaoDados" id="dados-usuario">
+          <p>Seus dados</p>
+          <div class="campos">
+              <label class="nomeCampos" for="nome">Nome</label>
+              <input class="inputCampos" type="text" id="nome" placeholder="Nome Completo" required>
+          </div>
+          <div class="campos">
+              <label class="nomeCampos" for="email">Email</label>
+              <input class="inputCampos" type="email" id="email" placeholder="exemplodeemail.@gmail.com" required>
+          </div>
+          <div class="campos">
+              <label class="nomeCampos" for="contato">Contato</label>
+              <input class="inputCampos" type="tel" id="contato" placeholder=" (99) 9 9999-9999" required>
+          </div>
+      </section>
+      <section class="secaoDados" id="dados-pagamento">
+        <p>Pagamento e entrega</p>
+        <div class="campos">
+            <label class="nomeCampos" for="numeroCartao">Número do Cartão</label>
+            <input class="inputCampos" type="tel" id="numeroCartao" placeholder="1111 1111 1111 1111" required>
         </div>
-        <div style="display: flex; flex-direction: column; padding: 20px 20px 5px 20px
-        ;">
-            <label style="margin-bottom: 5px;" for="email">Email</label>
-            <input style="border-radius: 5px; font-size: smaller;  padding: 3px 3px 3px 6px;" type="email" id="email" placeholder="exemplodeemail.@gmail.com" required>
+        <div class="campoDuplo">
+            <div class="campos">
+                <label class="nomeCampos" for="CVV">CVV</label>
+                <input class="inputCampos" type="tel" id="CVV" placeholder="222" required>
+            </div>
+            <div class="campos">
+                <label class="nomeCampos" for="dataValidade">Data de validade</label>
+                <input class="inputCampos" type="text" id="dataValidade" placeholder="mm-aaaa" required>
+            </div>
+          </div>
+          <div class="campos">
+            <label class="nomeCampos" for="CEP">CEP</label>
+            <input class="inputCampos" type="tel" id="CEP" placeholder="00.000-000" required>
         </div>
-        <div style="display: flex; flex-direction: column; padding: 20px 20px 5px 20px
-        ;">
-            <label style="margin-bottom: 5px;" for="contato">Contato</label>
-            <input style="border-radius: 5px; font-size: smaller;  padding: 3px 3px 3px 6px;" type="tel" id="contato" placeholder=" (99) 9 9999-9999" required>
+        <div class="campos">
+          <label class="nomeCampos" for="endereco">Endereço</label>
+          <input class="inputCampos" type="tel" id="endereco" placeholder="Ex: Rua Fulano, casa-689" required>
+      </div>
+      <div class="campoDuplo">
+        <div class="campos">
+            <label class="nomeCampos" for="numero">Número</label>
+            <input class="inputCampos" type="tel" id="numero" placeholder="689" required>
         </div>
-        <div style="display: flex; flex-direction: column; padding: 20px 20px 5px 20px
-        ;">
-            <label style="margin-bottom: 5px;" for="nome">Nome</label>
-            <input style="border-radius: 5px; font-size: smaller;  padding: 3px 3px 3px 6px;" type="text" id="nome" placeholder="Nome Completo" required>
+        <div class="campos">
+            <label class="nomeCampos" for="complemento">Complemento</label>
+            <input class="inputCampos" type="text" id="complemento" placeholder="Ponto de referência" required>
         </div>
-    </section>
-    <section id="dados-pagamento" style="width: 33.3%;">
-    
-    </section>
-    <section id="produtos-checkout" style="width: 33.3%;">
-    
-    </section>
-  </form>
+      </div>
+      </section>
+      <section class="secaoDados" id="produtos-checkout">
+        <section id="container-produtos-checkout">
+        </section>
+        <section id="celula-checkout">
+          <div style="display: flex; justify-content: space-between; width: 100%; padding: 10px;">
+            <p style="border-right: solid 1px gray; padding-right: 10px; margin-right: 20px;">Total</p>
+            <p id="preco-total" style="margin-right: 43%; margin-left: 23%;"></p>
+          </div>
+          <button type="submit" id="finalizar-compra">Finalizar compra</button>
+        </section>
+      </section>
+      
+    </form>
+    <script src="src/checkout.js" type="module"></script>
+  </main>
 </body>
 </html>

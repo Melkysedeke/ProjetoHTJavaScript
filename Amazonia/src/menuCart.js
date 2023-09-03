@@ -12,12 +12,21 @@ function closeCart (){
     overlay.style.right= "-300px";
 }
 
+function irParaCheckout (){
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).lenght === 0){
+    return;
+  }
+  window.location.href = window.location.origin + '/Amazonia/checkout.html '
+}
+
 export function initializeCart (){
     const openButton = document.getElementById('openButton');
     const closeButton = document.getElementById('closeButton');
+    const botaoIrParaCheckout = document.getElementById('confirm');
 
     openButton.addEventListener('click',openCart);
     closeButton.addEventListener('click',closeCart);
+    botaoIrParaCheckout.addEventListener('click', irParaCheckout);
 }
 
 function removerDoCarrinho (idProduto){
