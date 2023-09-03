@@ -24,7 +24,7 @@ function finalizarCompra (evento){
 
     salvarLocalStorage('historico', historicoDePedidosAtualizado);
     apagarDoLocalStorage();
-    window.location.href = window.location.origin + '/Amazonia/pedidos.html'
+    window.location.href = window.location.origin + '/Amazonia/pedidos.html';
 }
 
 desenharProdutosCheckout('carrinho');
