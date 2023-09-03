@@ -17,7 +17,7 @@ function finalizarCompra (evento){
     const dataAtual = new Date();
     const pedidofeito = {
         dataPedido: dataAtual,
-        pedido: idsProdutoCarrinhoComQuantidade
+        pedido: idsProdutoCarrinhoComQuantidade,
     }
     const historicoDePedidos = lerLocalStorage('historico') ?? [];
     const historicoDePedidosAtualizado = [pedidofeito, ...historicoDePedidos];
