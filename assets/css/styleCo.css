@@ -151,7 +151,7 @@ form {
 }
 
 @media (max-width: 1110px) {
-    .secaoDados > .card-carrinho {
+    .secaoDados .card-carrinho {
         position: relative;
         background-color: white;
         display:flex;
@@ -211,8 +211,17 @@ form {
     right: 10px;
 }
 
+#produtos-checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
 #celula-checkout {
     display: flex;
+    position: relative;
+    bottom: 1px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
