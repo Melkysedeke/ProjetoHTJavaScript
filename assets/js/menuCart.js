@@ -17,7 +17,7 @@ function irParaCheckout (){
     console.log("não é para ir para checkout");
     return;
   }
-  window.location.href = window.location.host + '/checkout.html';
+  window.location.href = window.location.replace('/checkout.html');
 }
 
 export function initializeCart (){
