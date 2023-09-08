@@ -16,7 +16,7 @@ function irParaCheckout (){
   if (Object.keys(idsProdutoCarrinhoComQuantidade).lenght === 0){
     return;
   }
-  window.location.href = window.location.origin + '/ProjetoHTJavaScript/checkout.html'
+  window.location.href = '/checkout.html';
 }
 
 export function initializeCart (){
