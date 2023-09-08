@@ -13,7 +13,8 @@ function closeCart (){
 }
 
 function irParaCheckout (){
-  if (Object.keys(idsProdutoCarrinhoComQuantidade).lenght === 0){
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0){
+    console.log("não é para ir para checkout");
     return;
   }
   window.location.href = '/checkout.html';
